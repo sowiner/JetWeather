@@ -1,5 +1,6 @@
 package com.sowinsoft.jetweather.screens.main
 
+import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,11 +15,7 @@ import javax.inject.Inject
 class HomeScreenViewModel @Inject constructor(private val repository: WeatherRepository) :
     ViewModel() {
     val data = mutableStateOf<DataOrException<WeatherModel, Exception, Boolean>>(
-        DataOrException(
-            null,
-            null,
-            true
-        )
+        DataOrException(null, null, true)
     )
 
     init {
@@ -35,6 +32,7 @@ class HomeScreenViewModel @Inject constructor(private val repository: WeatherRep
             data.value = repository.getWeatherAll(dataId)
             if (data.value.data.toString().isNotEmpty()) data.value.loading = false
         }
+        Log.d("HomeScreenViewModel", "getWeatherAllData: ${data.value.data}")
     }
 
 

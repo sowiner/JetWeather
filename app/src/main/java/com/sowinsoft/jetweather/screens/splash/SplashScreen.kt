@@ -27,7 +27,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.sowinsoft.jettrivia.R
+import com.sowinsoft.jetweather.R
+
+
+
+
 import com.sowinsoft.jetweather.navigation.WeatherNavScreens
 import kotlinx.coroutines.delay
 
@@ -56,34 +60,43 @@ fun SplashContent(
         nav.navigate(WeatherNavScreens.HomeScreen.name)
     }
 
-    Surface(
-        modifier
-            .padding(15.dp)
-            .size(330.dp)
-            .scale(scale.value),
-        color = MaterialTheme.colorScheme.background,
-        shape = CircleShape,
-        contentColor = Color.White,
-        border = BorderStroke(width = 2.dp, color = Color.LightGray)
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(1.dp)
     ) {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center,
+        Surface(
+            modifier
+                .padding(15.dp)
+                .size(330.dp)
+                .scale(scale.value),
+            color = MaterialTheme.colorScheme.background,
+            shape = CircleShape,
+            contentColor = Color.White,
+            border = BorderStroke(width = 2.dp, color = Color.LightGray)
         ) {
-            Image(
-                painterResource(id = R.drawable.sun),
-                contentDescription = "Splash Icon",
-                modifier = Modifier.size(95.dp),
-                contentScale = ContentScale.Fit
-            )
-            Text(
-                text = " Splash Screen?",
-                style = MaterialTheme.typography.headlineLarge,
-                color = Color.LightGray
-            )
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center,
+            ) {
+                Image(
+                    painterResource(id = R.drawable.sun),
+                    contentDescription = "Splash Icon",
+                    modifier = Modifier.size(95.dp),
+                    contentScale = ContentScale.Fit
+                )
+                Text(
+                    text = " Splash Screen?",
+                    style = MaterialTheme.typography.headlineLarge,
+                    color = Color.LightGray
+                )
+            }
         }
     }
+
 }
 
 @Preview(showBackground = true)

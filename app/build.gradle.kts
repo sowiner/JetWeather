@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace = "com.sowinsoft.jettrivia"
+    namespace = "com.sowinsoft.jetweather"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.sowinsoft.jettrivia"
+        applicationId = "com.sowinsoft.jetweather"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
