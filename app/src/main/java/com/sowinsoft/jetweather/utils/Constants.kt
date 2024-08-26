@@ -1,8 +1,13 @@
 package com.sowinsoft.jetweather.utils
 
 object Constants {
-    val BASE_URL =
-//        "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}"
-        "https://api.openweathermap.org/data/3.0/onecall"
-    val API_KEY = "f20073be77293ea647ba266877eb4e7d"
+    // "https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=CWA-2F26782A-4E5D-4D75-93E6-2052CACE5C81"
+    private const val SCHEMA = "https"
+    private const val DATAID = "F-D0047-091"
+    private const val BASE_URL = "opendata.cwa.gov.tw/api/v1/rest/datastore"
+    private const val API_KEY = "CWA-2F26782A-4E5D-4D75-93E6-2052CACE5C81"
+
+    fun getWeatherUrl(): String {
+        return "$SCHEMA://$BASE_URL/$DATAID?$API_KEY"
+    }
 }
