@@ -15,17 +15,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetWeatherTheme {
-                    WeatherNavigation()
-
+                WeatherNavigation()
             }
         }
     }
 }
-
-//@Preview(showBackground = true)
-//@Composable
-//fun GreetingPreview() {
-//    JetWeatherTheme {
-//
-//    }
-//}

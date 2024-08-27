@@ -1,5 +1,6 @@
 package com.sowinsoft.jetweather.repository
 
+import android.util.Log
 import com.sowinsoft.jetweather.api.WeatherApi
 import com.sowinsoft.jetweather.data.DataOrException
 import com.sowinsoft.jetweather.model.WeatherModel
@@ -12,6 +13,7 @@ class WeatherRepository @Inject constructor(private val api: WeatherApi) {
         } catch (e: Exception) {
             return DataOrException(exception = e)
         }
+        Log.d("REX", "getWeatherAll: $response")
         return DataOrException(data = response)
     }
 }
